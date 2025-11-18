@@ -1,0 +1,82 @@
+.home {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(/src/assets/lendulet_bg.svg);
+    background-size: cover;
+    background-position: center center;
+    display: grid;
+    /* grid-template-columns: 18% 32% 32% 18%; */
+    grid-template-rows: 100%;
+}
+
+.gridTexts {
+    grid-area: 1 / 2 / 2 / 4;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.titleContainer {
+    width: 100%;
+    padding: 0 1vw 0 .4vw;
+    box-sizing: border-box;
+    font-weight: 800;
+}
+
+.sideContainer {
+    width: 50%;
+    padding: 0 1vw;
+    box-sizing: border-box;
+    font-weight: 800;
+}
+
+.title {
+    width: 100%;
+}
+
+.sideTitle {
+    width: 100%;
+    margin-top: -1.5vw;
+    font-weight: 700;
+}
+
+.titleMsg {
+    width: 50%;
+    padding: 1vw;
+    font-size: 20px;
+    margin-top: 36px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.titleMsg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1px;
+    right: 0;
+    z-index: -1;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media (max-width: 768px) {
+    .sideContainer {
+        width: 100%;
+    }
+
+    .titleMsg {
+        width: 100%;
+        font-size: 18px;
+        margin-top: 35vh;
+        margin-bottom: 5vh;
+    }
+}
