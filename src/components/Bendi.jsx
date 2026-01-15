@@ -49,21 +49,13 @@ function Bendi({id}) {
                     </ScrollSlideText>
                 </h2>
                 <div className={styles.introduction}>
-                    <p className={styles.bold}>Ha úgy érzed szükséged van egy segítő kézre, a legjobb helyen jársz!</p>
-                    <p>x éve dolgozom masszőrként, többek között számos válogatott versenyző munkáját is segítve. x éve dolgozom masszőrként, többek között számos válogatott versenyző munkáját is segítve. </p>
+                    <p className={styles.bold}>10+ éve dolgozom sportmasszőrként, különböző területen és sportágban támogattam a hozzám bizalommal fordulókat.</p>
+                    <p>Számos aktív sportoló és válogatott versenyző, többek között tájfutó, boxoló, judós, terepfutó, vízilabdázó, labdarúgó, atléta, sziklamászó stb. munkáját is segítve.</p>
                 </div>
             </div>
             <div className={styles.picFixDisplay}></div>
-            <div className={`${styles.timelineBg} ${open ? styles.timelineBgOpen : ""}`}></div>
+            {/* <div className={`${styles.timelineBg} ${open ? styles.timelineBgOpen : ""}`}></div>
             <div className={styles.timeline}>
-                {/* <div className={styles.timeFirst}></div>
-                <div className={styles.timeSecond}>
-                    <div className={`${styles.firstEv} ${styles.event}`}>
-                        <div className={styles.timeDot}></div>
-                        <div className={styles.timeTag}>2021</div>
-                    </div>
-                </div>
-               <div className={styles.timePic}></div>  */}
                 <ImageBox className={`${open ? styles.hiddenPic : ""} ${styles.tlPic1}`} src={img1} />
                 <ImageBox className={`${open ? styles.hiddenPic : ""} ${styles.tlPic2}`} src={img1} />
                 <div className={`${open ? styles.hiddenPic : ""} ${styles.picFix}`}></div>
@@ -81,7 +73,7 @@ function Bendi({id}) {
                         <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                     </svg>
                     )}
-            </Btn>
+            </Btn> */}
         </section>
     )
 }

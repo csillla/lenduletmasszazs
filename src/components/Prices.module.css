@@ -1,0 +1,144 @@
+.pricesSectionWrapper {
+    position: relative;
+    /* height: 100vh; */
+}
+
+.pricesSection {
+    position: relative;
+    z-index: 5;
+}
+  
+.pricesSticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    /* z-index: 5; */
+}
+  
+.scrollContainer {
+    height: 100vh;
+    display: flex;
+    width: max-content;
+    gap: 25vw;
+    will-change: transform;
+    padding-left: 75vw;
+    padding-right: 25vw;
+    align-items: center;
+}
+
+.fixed {
+    height: 100%;
+    width: 100%;
+    /* background-color: aqua; */
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.fixedUp {
+    height: 100%;
+    width: 100%;
+    /* background-color: aqua; */
+    position: absolute;
+    z-index: 7;
+    top: 0;
+    left: 0;
+}
+
+.fixedSticky {
+    height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    /* background-color: brown; */
+    display: grid;
+    grid-template-columns: 18% 32% 32% 18%;
+    grid-template-rows: 100%;
+}
+
+.bgHalf {
+    grid-area: 1 / 3 / 2 / 5;
+    /* background-image: url(../assets/card_1.jpg);
+    background-size: cover;
+    background-position: center center; */
+    position: relative;
+    /* width: 50vw;
+    height: 100vh; */
+    overflow: hidden;
+}
+
+.bgLayer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    will-change: opacity;
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.bgLayer:first-child {
+    opacity: 1;
+}
+
+.titleHalf {
+    grid-area: 1 / 1 / 2 / 3;
+    background-color: black;
+}
+
+.title {
+    padding-left: calc(18vw + 24px);
+    padding-top: 15vh;
+    color: white;
+    font-size: 22px;
+    width: 25vw; 
+}
+
+
+.bgLayer[data-bg] {
+    background-image: attr(data-bg url);
+}
+
+@media (max-width: 1023px) {
+    .scrollContainer {
+        padding-left: 60vw;
+        padding-right: 10vw;
+    }
+
+    .fixedSticky {
+        grid-template-columns: 10% 40% 40% 10%;
+    }
+
+    .title {
+        padding-left: calc(10vw + 24px);
+    }
+}
+
+@media (max-width: 768px) {
+    .bgHalf {
+        grid-area: 1 / 1 / 2 / 5;
+    }
+
+    .titleHalf {
+        grid-area: 1 / 1 / 2 / 5;
+        background-color: transparent;
+    }
+
+    .title {
+        padding-left: calc(10vw + 8px);
+        padding-top: 8vh;
+        color: white;
+        font-size: 17px;
+        width: calc(80vw - 16px); 
+    }
+
+    .scrollContainer {
+        padding-left: 30vw;
+        padding-right: 30vw;
+        align-items: flex-end;
+    }
+}
+  

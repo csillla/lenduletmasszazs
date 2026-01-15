@@ -3,6 +3,9 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import Bendi from './components/Bendi'
 import About from './components/About'
+import Reviews from './components/Reviews'
+import Prices from './components/Prices'
+import Contact from './components/Contact'
 
 
 function App() {
@@ -12,8 +15,9 @@ function App() {
       <Home id="home" />
       <Bendi id="bendi" />
       <About id="about" />
-      <Home id="reviews" />
-      <Home id="prices" />
+      <Reviews id="reviews" />
+      <Prices id="prices" />
+      <Contact id="contact" />
     </>
   )
 }

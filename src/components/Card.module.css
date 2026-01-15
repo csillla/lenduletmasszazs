@@ -1,0 +1,50 @@
+.card {
+    height: 70vh;
+    width: 25vw;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-color: white;
+    color: black;
+    flex-shrink: 0;
+}
+
+.image {
+    background-image: url(../assets/card_1.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.content {
+    padding: 16px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.text {
+    font-size: 20px;
+}
+
+@media (max-width: 1023px) {
+    .card {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: calc(7vh + 72px);
+        width: 70vw;
+        height: 40vh;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 17px;
+    }
+}
