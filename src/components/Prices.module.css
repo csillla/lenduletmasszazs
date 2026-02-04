@@ -85,21 +85,62 @@
 }
 
 .titleHalf {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 5;
+    width: 50%;
+    overflow: hidden;
     background-color: black;
+    /* transition: none; */
 }
 
 .title {
     padding-left: calc(18vw + 24px);
     padding-top: 15vh;
     color: white;
-    font-size: 22px;
+    /* font-size: 22px; */
     width: 25vw; 
+    position: relative;
+    z-index: 3;
+}
+
+.priceTag {
+    margin-left: calc(18vw + 24px);
+    padding: 12px 0;
+    display: grid;
+    grid-template-columns: calc(32vw - 48px) auto;
+    width: 0%;
+    /* clip-path: inset(0 100% 0 0); */
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid white;
+    position: relative;
+    z-index: 2;
+}
+
+.priceTagInnerWrapper {
+    display: flex;
+}
+
+.tagPrice {
+    margin-left: auto;
 }
 
 
 .bgLayer[data-bg] {
     background-image: attr(data-bg url);
+}
+
+.titleOverlay {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    background: black;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.border {
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 1023px) {
@@ -109,11 +150,16 @@
     }
 
     .fixedSticky {
-        grid-template-columns: 10% 40% 40% 10%;
+        grid-template-columns: 5% 45% 45% 5%;
     }
 
     .title {
-        padding-left: calc(10vw + 24px);
+        padding-left: calc(5vw + 24px);
+    }
+
+    .priceTag {
+        margin-left: calc(5vw + 24px);
+        grid-template-columns: calc(45vw - 48px) auto;
     }
 }
 
@@ -125,20 +171,39 @@
     .titleHalf {
         grid-area: 1 / 1 / 2 / 5;
         background-color: transparent;
+        width: 100% !important;
     }
 
     .title {
-        padding-left: calc(10vw + 8px);
+        padding-left: calc(5vw + 24px);
         padding-top: 8vh;
         color: white;
-        font-size: 17px;
+        font-size: 12vw;
         width: calc(80vw - 16px); 
     }
 
     .scrollContainer {
-        padding-left: 30vw;
-        padding-right: 30vw;
+        padding-left: 15vw;
+        padding-right: 15vw;
         align-items: flex-end;
     }
+
+    .priceTag {
+        padding: 4px 0;
+        display: grid;
+        grid-template-columns: calc(90vw - 48px) auto;
+        width: 0%;
+    }
+
+    .titleOverlay {
+        visibility: hidden;
+    }
+    
 }
+
+/* @media (min-width: 769px) {
+    .titleOverlay {
+      visibility: hidden;
+    }
+} */
   

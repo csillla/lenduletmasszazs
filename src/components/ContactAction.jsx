@@ -12,7 +12,7 @@ function ContactAction({ action, children }) {
             <div>{action}</div>
             <span className={styles.icon}>
             {open ? "−" : "+"}
-        </span>
+            </span>
         </div>
         
 

@@ -1,0 +1,36 @@
+.preContact {
+    height: 200vh;
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: 18% 32% 32% 18%; */
+    grid-template-rows: 100%;
+    background-color: #000;
+    color: #fff;
+    /* transition: background-color 2s ease, color 2s ease; */
+}
+
+.preContact.dark {
+    background-color: #fff;
+    color: #a96c6c;
+}
+
+.textContainer {
+    height: 100vh;
+    grid-area: 1 / 2 / 2 / 4;
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* color: white; */
+    padding: 10vh 0;
+    position: sticky;
+    top: 0;
+}
+
+.text {
+    font-weight: 700;
+    margin-top: 12vh;
+    font-size: 28px;
+    text-align: center;
+}

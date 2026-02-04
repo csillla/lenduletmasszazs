@@ -6,6 +6,7 @@ import About from './components/About'
 import Reviews from './components/Reviews'
 import Prices from './components/Prices'
 import Contact from './components/Contact'
+// import PreContact from './components/PreContact'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <About id="about" />
       <Reviews id="reviews" />
       <Prices id="prices" />
+      {/* <PreContact /> */}
       <Contact id="contact" />
     </>
   )

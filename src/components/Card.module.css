@@ -23,8 +23,22 @@
     font-weight: 800;
 }
 
+.time {
+    font-size: 20px;
+}
+
 .text {
     font-size: 20px;
+}
+
+.titleLine {
+    margin-bottom: 16px;
+}
+
+.dot {
+    display: none;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 @media (max-width: 1023px) {
@@ -35,16 +49,32 @@
 
 @media (max-width: 768px) {
     .card {
-        margin-bottom: calc(7vh + 72px);
-        width: 70vw;
+        margin-bottom: calc(5vh + 64px);
+        width: 85vw;
         height: 40vh;
     }
 
     .price {
-        font-size: 20px;
+        font-size: 17px;
+    }
+
+    .time {
+        font-size: 17px;
+        font-weight: 700;
     }
 
     .text {
         font-size: 17px;
+        line-height: 1;
+    }
+
+    .titleLine {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 4px;
+    }
+
+    .dot {
+        display: block;
     }
 }

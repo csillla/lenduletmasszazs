@@ -34,20 +34,20 @@
 }
 
 .box {
-    width: 30vw;
-    margin: .9vw;
+    width: 32vw;
+    /* margin: .9vw; */
     padding: 36px;
     box-sizing: border-box;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.185);
+    background-color: rgba(173, 173, 173, 0.185);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     display: flex;
     flex-direction: column;
     gap: 24px;
-    border-radius: 24px;
+    /* border-radius: 24px; */
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .icon {
@@ -59,14 +59,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 
 .gridMainAb {
     position: sticky;
     top: 0;
-    height: 398vh;
-    grid-template-rows: 398vh;
+    height: 478vh;
+    grid-template-rows: 478vh;
     display: grid;
     grid-template-columns: 18% 32% 32% 18%;
     transition: grid-template-columns 2s ease, background-image 1s ease;
@@ -125,8 +126,23 @@
     /* z-index: 7; */
 }
 
+.firstBox {
+    margin-top: 80vh;
+}
+
+.boxList {
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.boxList > li {
+    padding: 0;
+}
+
 .secondBox {
-    margin-top: 160vh;
+    margin-top: 240vh;
 }
 
 .thirdBoxWrapper {
@@ -135,34 +151,34 @@
 }
 
 .thirdBox {
-    margin-top: 300vh;
+    margin-top: 380vh;
 }
 
 @media (max-width: 1023px) {
     .gridMainAb {
-        grid-template-columns: 10% 40% 40% 10%;
+        grid-template-columns: 5% 45% 45% 5%;
     }
 
     .gridMainAb.phase1Active {
-        grid-template-columns: 10% 8% 40% 42%;
+        grid-template-columns: 5% 5% 45% 45%;
     }
 
     .gridMainAb.phase2Active {
-        grid-template-columns: 10% 8% 8% 74%;
+        grid-template-columns: 5% 5% 5% 85%;
     }
 
     .box {
-        width: 38vw;
+        width: 43vw;
     }
 }
 
 @media (max-width: 768px) {
     .gridMainAb.phase1Active {
-        grid-template-columns: 10% 5% 75% 10%;
+        grid-template-columns: 5% 5% 85% 5%;
     }
 
     .gridMainAb.phase2Active {
-        grid-template-columns: 10% 5% 5% 80%;
+        grid-template-columns: 5% 5% 5% 85%;
     }
 
     .firstBoxWrapper {
@@ -170,23 +186,25 @@
     }
 
     .box {
-        padding: 16px;
-        margin: 1.9vw;
-        font-size: 17px;
+        padding: 24px 16px;
+        margin: 0;
+        font-size: 18px;
+        border-radius: 0;
     }
 
     .firstBox {
-        width: 76vw;
+        width: 90vw;
+        margin-top: 80vh;
     }
 
     .secondBox {
-        width: 71vw;
-        margin-top: 180vh;
+        width: 85vw;
+        margin-top: 200vh;
     }
 
     .thirdBox {
-        width: 76vw;
-        margin-top: 340vh;
+        width: 85vw;
+        margin-top: 360vh;
     }
 
     .gridMainAb {

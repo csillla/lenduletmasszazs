@@ -18,7 +18,7 @@ const sections = [
     message: "Oogway mester is kezdte valahol...", 
     location: "Rólam", 
     icon: (
-        <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 10000 10000" fill="#ffffff">
+        <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 10000 10000" fill="#ffffff">
          <g id="Layer_x0020_1">
           <metadata id="CorelCorpID_0Corel-Layer"/>
           <path class="fil0" d="M61159 -14642c3127,-3669 5826,-2029 11541,-3140 5715,-1111 10689,-3387 14076,-8996 3386,-5609 6561,-3545 7302,-3069 741,476 2382,1587 2593,3228 212,1640 847,2593 -2116,4127 -2964,1535 -6615,2382 -6827,5662 -211,3281 2382,3916 2434,6086 -6614,820 -7203,-493 -7672,-3016 -1105,519 -6400,1769 -7832,1852 -1432,82 -2857,-55 -3546,-106 -369,332 -767,1931 -7408,1534 -53,-2169 2671,-2713 2663,-4210"/>
@@ -34,7 +34,7 @@ const sections = [
         message: "Mindenre van egy jó fogás.", 
         location: "Így dolgozom", 
         icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+            <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#ffffff">
                 <path d="M480-80q-73-9-145-39.5T206.5-207Q150-264 115-351T80-560v-40h40q51 0 105 13t101 39q12-86 54.5-176.5T480-880q57 65 99.5 155.5T634-548q47-26 101-39t105-13h40v40q0 122-35 209t-91.5 144q-56.5 57-128 87.5T480-80Zm-2-82q-11-166-98.5-251T162-518q11 171 101.5 255T478-162Zm2-254q15-22 36.5-45.5T558-502q-2-57-22.5-119T480-742q-35 59-55.5 121T402-502q20 17 42 40.5t36 45.5Zm78 236q37-12 77-35t74.5-62.5q34.5-39.5 59-98.5T798-518q-94 14-165 62.5T524-332q12 32 20.5 70t13.5 82Zm-78-236Zm78 236Zm-80 18Zm46-170ZM480-80Z"/>
             </svg>
     )},
@@ -44,7 +44,7 @@ const sections = [
     message: "Te mit mondanál?",  
     location: "Vélemények",
     icon: (
-        <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+        <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#ffffff">
             <path d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/>
         </svg>
     )},
@@ -54,7 +54,7 @@ const sections = [
     message: "Árak", 
     location: "Árak" ,
     icon: (
-        <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+        <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#ffffff">
             <path d="M640-520q17 0 28.5-11.5T680-560q0-17-11.5-28.5T640-600q-17 0-28.5 11.5T600-560q0 17 11.5 28.5T640-520Zm-320-80h200v-80H320v80ZM180-120q-34-114-67-227.5T80-580q0-92 64-156t156-64h200q29-38 70.5-59t89.5-21q25 0 42.5 17.5T720-820q0 6-1.5 12t-3.5 11q-4 11-7.5 22.5T702-751l91 91h87v279l-113 37-67 224H480v-80h-80v80H180Zm60-80h80v-80h240v80h80l62-206 98-33v-141h-40L620-720q0-20 2.5-38.5T630-796q-29 8-51 27.5T547-720H300q-58 0-99 41t-41 99q0 98 27 191.5T240-200Zm240-298Z"/>
         </svg>
     )},
@@ -64,7 +64,7 @@ const sections = [
         message: "Eljött a Te időd!", 
         location: "Kapcsolat" ,
         icon: (
-            <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+            <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#ffffff">
                 <path d="M162-120q-18 0-30-12t-12-30v-162q0-13 9-23.5t23-14.5l138-28q14-2 28.5 2.5T342-374l94 94q38-22 72-48.5t65-57.5q33-32 60.5-66.5T681-524l-97-98q-8-8-11-19t-1-27l26-140q2-13 13-22.5t25-9.5h162q18 0 30 12t12 30q0 125-54.5 247T631-329Q531-229 409-174.5T162-120Zm556-480q17-39 26-79t14-81h-88l-18 94 66 66ZM360-244l-66-66-94 20v88q41-3 81-14t79-28Zm358-356ZM360-244Z"/>
             </svg>
         )},
@@ -230,7 +230,7 @@ export default function Nav() {
                         switchBoth("hoverMsg", prevMsg, "hoverIcon", prevIcon);
                 }}
                 >
-                    <div className={styles.icons} style={{ position: "relative", height: "24px" }}>
+                    <div className={styles.icons} style={{ position: "relative", height: "22px" }}>
                         {sections.map((s, i) => (
                             <span className={styles.icon}
                             key={s.iconId}
@@ -252,7 +252,7 @@ export default function Nav() {
                             }}
                             >
                             {/* Up arrow icon */}
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#ffffff">
                                 <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
                             </svg>
                         </span>
@@ -288,7 +288,7 @@ export default function Nav() {
                     {/* Hover text */}
                     
                     <div className={styles.location}>{currentLocation}</div>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#ffffff">
                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
                     </svg>
                 </div>
