@@ -26,14 +26,21 @@ function Reviews({ id }) {
     // }, [index]);
 
     const scrollToTop = () => {
-        // remove hash
         history.replaceState(null, "", window.location.pathname);
       
-        // force reflow to allow re-trigger
         requestAnimationFrame(() => {
           window.location.hash = "reviews-top";
         });
     };
+
+    // const scrollToTop = () => {
+    //     if (!sectionRef.current) return;
+      
+    //     sectionRef.current.scrollIntoView({
+    //       behavior: "smooth",
+    //       block: "start"
+    //     });
+    // };
 
     const next = () => {
         setIndex(prev => (prev + visibleCount) % total);

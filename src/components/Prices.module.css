@@ -11,13 +11,13 @@
 .pricesSticky {
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: calc(var(--vh) * 100);
     overflow: hidden;
     /* z-index: 5; */
 }
   
 .scrollContainer {
-    height: 100vh;
+    height: calc(var(--vh) * 100);
     display: flex;
     width: max-content;
     gap: 25vw;
@@ -48,7 +48,7 @@
 }
 
 .fixedSticky {
-    height: 100vh;
+    height: calc(var(--vh) * 100);
     width: 100%;
     position: sticky;
     top: 0;
@@ -60,12 +60,7 @@
 
 .bgHalf {
     grid-area: 1 / 3 / 2 / 5;
-    /* background-image: url(../assets/card_1.jpg);
-    background-size: cover;
-    background-position: center center; */
     position: relative;
-    /* width: 50vw;
-    height: 100vh; */
     overflow: hidden;
 }
 
@@ -94,7 +89,7 @@
 
 .title {
     padding-left: calc(18vw + 24px);
-    padding-top: 15vh;
+    padding-top: calc(var(--vh) * 15);
     color: white;
     /* font-size: 22px; */
     width: 25vw; 
@@ -108,7 +103,6 @@
     display: grid;
     grid-template-columns: calc(32vw - 48px) auto;
     width: 0%;
-    /* clip-path: inset(0 100% 0 0); */
     overflow: hidden;
     white-space: nowrap;
     border-top: 1px solid white;
@@ -176,7 +170,7 @@
 
     .title {
         padding-left: calc(5vw + 24px);
-        padding-top: 8vh;
+        padding-top: calc(var(--vh) * 8);
         color: white;
         font-size: 12vw;
         width: calc(80vw - 16px); 
@@ -200,10 +194,4 @@
     }
     
 }
-
-/* @media (min-width: 769px) {
-    .titleOverlay {
-      visibility: hidden;
-    }
-} */
   

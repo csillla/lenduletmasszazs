@@ -1,5 +1,5 @@
 .reviews {
-    min-height: 100vh;
+    min-height: calc(var(--vh) * 100);
     width: 100%;
     background-color: #3c2521; 
     position: relative;
@@ -53,7 +53,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
-    padding: 10vh 8vw;
+    padding: calc(var(--vh) * 10) 8vw;
     box-sizing: border-box;
     text-align: center;
 }
@@ -68,20 +68,15 @@
   
 .text {
     font-weight: 700;
-    margin-top: 12vh;
+    margin-top: calc(var(--vh) * 12);
     font-size: 28px;
 }
 
-/* .splitTypesText {
-    font-weight: 700;
-    margin-top: 12vh;
-    font-size: 28px;
-} */
   
 .name {
     display: block;
     font-weight: 600;
-    margin-top: 8vh;
+    margin-top: calc(var(--vh) * 8);
 }
 
 
@@ -191,6 +186,6 @@
     }
 
     .reviewsGrid {
-        padding: 10vh 8px;
+        padding: calc(var(--vh) * 10) 8px;
     }
 }
