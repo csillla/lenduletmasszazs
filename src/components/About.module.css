@@ -208,7 +208,7 @@
     }
 
     .gridMainAb {
-        height: 460vh;
+        height: calc(var(--vh) * 460);
         grid-template-rows: calc(var(--vh) * 460);
     }
 
