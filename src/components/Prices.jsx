@@ -25,68 +25,37 @@ function Prices({ id }) {
       const section = sectionRef.current;
       const pin = pinRef.current;
       const track = trackRef.current;
-
-      const prevSection = document.querySelector('#reviews');
-      const resizeObserver = new ResizeObserver(() => {
-        ScrollTrigger.refresh();
-      });
-
-
-      resizeObserver.observe(prevSection);
-
       const cards = gsap.utils.toArray(track.children);
-      const bgLayers = gsap.utils.toArray(
-        bgWrapRef.current.querySelectorAll(`.${styles.bgLayer}`)
-      );
+      const bgLayers = gsap.utils.toArray(bgWrapRef.current.children);
       const priceTags = gsap.utils.toArray(priceTagsRef.current.children);
-
-      // -------------------------
-      // Helper functions
-      // -------------------------
-      const getViewportHeight = () =>
-        window.visualViewport ? window.visualViewport.height : window.innerHeight;
-
+  
       const getScrollLength = () => track.scrollWidth - window.innerWidth;
 
-      const showPriceTag = (index) => {
-        gsap.to(priceTags[index], {
-          width: "100%",
-          duration: 0.4,
-          ease: "power2.out",
-        });
+      const setScrollLength = () => {
+        section.style.setProperty(
+          "--scroll-length",
+          `${getScrollLength()}px`
+        );
       };
 
-      const hidePriceTag = (index) => {
-        gsap.to(priceTags[index], {
-          width: 0,
-          duration: 0.3,
-          ease: "power2.in",
-        });
-      };
+      setScrollLength();
 
+      const isDesktop = () =>
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches;
       
-
-      // -------------------------
-      // Initial setup
-      // -------------------------
-      gsap.set(bgLayers, { opacity: 0 });
-      gsap.set(bgLayers[0], { opacity: 1 });
-      gsap.set(priceTags, { width: 0 }); // collapsed initially
-
-      // Section height for horizontal scroll
-      const setSectionHeight = () => {
-        gsap.set(section, { height: getViewportHeight() + getScrollLength() });
+      const onResize = () => {
+        if (!isDesktop()) return; // ignore mobile UI changes
+        setScrollLength();
+        ScrollTrigger.refresh();
       };
-      setSectionHeight();
-      ScrollTrigger.addEventListener("refreshInit", setSectionHeight);
-
-      // -------------------------
-      // Horizontal scroll tween
-      // -------------------------
+      
+      window.addEventListener("resize", onResize);
+      
+  
+      
+  
+      // ---------------- Horizontal scroll tween ----------------
       let expanded = false;
-
-      
-
       const horizontalTween = gsap.to(track, {
         x: () => -getScrollLength(),
         ease: "none",
@@ -96,115 +65,45 @@ function Prices({ id }) {
           end: () => `+=${getScrollLength()}`,
           scrub: true,
           pin: pin,
-          pinSpacing: false,
-          anticipatePin: 1,
+          pinSpacing: true,
           invalidateOnRefresh: true,
-          // TitleHalf expansion
           onUpdate: (self) => {
-            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+            const isMobile = window.matchMedia("(max-width:768px)").matches;
             const titleHalf = titleHalfRef.current;
             const overlay = overlayRef.current;
-          
             if (self.progress >= 0.999 && !expanded) {
               expanded = true;
-          
-              if (isMobile && overlay) {
-                gsap.to(overlay, {
-                  width: "100%",
-                  duration: 0.6,
-                  ease: "power2.out",
-                });
-              } else {
-                gsap.to(titleHalf, {
-                  width: "50%",
-                  duration: 0.6,
-                  ease: "power2.out",
-                });
-              }
+              if (isMobile && overlay) gsap.to(overlay, { width: "100%", duration: 0.6, ease: "power2.out" });
+              else gsap.to(titleHalf, { width: "50%", duration: 0.6, ease: "power2.out" });
             }
-          
             if (self.progress < 0.999 && expanded) {
               expanded = false;
-          
-              if (isMobile && overlay) {
-                gsap.to(overlay, {
-                  width: 0,
-                  duration: 0.4,
-                  ease: "power2.inOut",
-                });
-              } else {
-                gsap.to(titleHalf, {
-                  width: "50%",
-                  duration: 0.4,
-                  ease: "power2.inOut",
-                });
-              }
+              if (isMobile && overlay) gsap.to(overlay, { width: 0, duration: 0.4, ease: "power2.inOut" });
+              else gsap.to(titleHalf, { width: "50%", duration: 0.4, ease: "power2.inOut" });
             }
           }
-          
-        },
+        }
       });
-
-      
-      
-
-      
-      
-      // -------------------------
-      // ScrollTriggers for cards
-      // -------------------------
-      cards.forEach((card, index) => {
+  
+      // ---------------- ScrollTriggers for cards ----------------
+      cards.forEach((card, i) => {
         ScrollTrigger.create({
           trigger: section,
-          start: () =>
-            horizontalTween.scrollTrigger.start +
-            (getScrollLength() / cards.length) * index,
-          end: () =>
-            horizontalTween.scrollTrigger.start +
-            (getScrollLength() / cards.length) * (index + 1),
-
-          onEnter: () => {
-            gsap.to(bgLayers, { opacity: 0, duration: 0.3 });
-            gsap.to(bgLayers[index], { opacity: 1, duration: 0.4 });
-            showPriceTag(index);
-          },
-
-          onEnterBack: () => {
-            gsap.to(bgLayers, { opacity: 0, duration: 0.3 });
-            gsap.to(bgLayers[index], { opacity: 1, duration: 0.4 });
-            showPriceTag(index);
-          },
-
-          onLeaveBack: () => {
-            hidePriceTag(index);
-          },
+          start: () => horizontalTween.scrollTrigger.start + (getScrollLength() / cards.length) * i,
+          end: () => horizontalTween.scrollTrigger.start + (getScrollLength() / cards.length) * (i + 1),
+          onEnter: () => { gsap.to(bgLayers, { opacity: 0, duration: 0.3 }); gsap.to(bgLayers[i], { opacity: 1, duration: 0.4 }); gsap.to(priceTags[i], { width: "100%", duration: 0.4, ease: "power2.out" }); },
+          onEnterBack: () => { gsap.to(bgLayers, { opacity: 0, duration: 0.3 }); gsap.to(bgLayers[i], { opacity: 1, duration: 0.4 }); gsap.to(priceTags[i], { width: "100%", duration: 0.4, ease: "power2.out" }); },
+          onLeaveBack: () => gsap.to(priceTags[i], { width: 0, duration: 0.3, ease: "power2.in" })
         });
       });
-
-      // -------------------------
-      // Refresh on resize / viewport change
-      // -------------------------
-      const refresh = () => ScrollTrigger.refresh();
-      window.addEventListener("resize", refresh);
-      if (window.visualViewport) {
-        window.visualViewport.addEventListener("resize", refresh);
-      }
-
-      // -------------------------
-      // Cleanup
-      // -------------------------
-      return () => {
-        window.removeEventListener("resize", refresh);
-        if (window.visualViewport) {
-          window.visualViewport.removeEventListener("resize", refresh);
-        }
-        ScrollTrigger.removeEventListener("refreshInit", setSectionHeight);
-      };
-
+  
+      
+  
     }, rootRef);
-
+  
     return () => ctx.revert();
   }, []);
+  
 
   return (
     <div id={id} ref={rootRef} className={styles.pricesSectionWrapper}>

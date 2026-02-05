@@ -12,12 +12,14 @@
     position: sticky;
     top: 0;
     height: calc(var(--vh) * 100);
+    height: 100lvh;
     overflow: hidden;
     /* z-index: 5; */
 }
   
 .scrollContainer {
     height: calc(var(--vh) * 100);
+    height: 100lvh;
     display: flex;
     width: max-content;
     gap: 25vw;
@@ -49,6 +51,7 @@
 
 .fixedSticky {
     height: calc(var(--vh) * 100);
+    height: 100lvh;
     width: 100%;
     position: sticky;
     top: 0;
@@ -90,6 +93,7 @@
 .title {
     padding-left: calc(18vw + 24px);
     padding-top: calc(var(--vh) * 15);
+    padding-top: 15lvh;
     color: white;
     /* font-size: 22px; */
     width: 25vw; 
@@ -171,6 +175,7 @@
     .title {
         padding-left: calc(5vw + 24px);
         padding-top: calc(var(--vh) * 8);
+        padding-top: 8lvh;
         color: white;
         font-size: 12vw;
         width: calc(80vw - 16px); 
