@@ -6,6 +6,7 @@
 .pricesSection {
     position: relative;
     z-index: 5;
+    min-height: calc(100vh + var(--scroll-length, 0px));
     min-height: calc(100lvh + var(--scroll-length, 0px));
 }
   

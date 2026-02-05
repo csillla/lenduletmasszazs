@@ -5,6 +5,7 @@
 .bigBg {
     grid-area: 1 / 1 / 2 / 5;
     height: calc(var(--vh) * 100);
+    height: 100lvh;
     width: 100%;
     position: sticky;
     top: 0;
@@ -67,7 +68,9 @@
     position: sticky;
     top: 0;
     height: calc(var(--vh) * 478);
+    height: 478lvh;
     grid-template-rows: calc(var(--vh) * 478);
+    grid-template-rows: 478lvh;
     display: grid;
     grid-template-columns: 18% 32% 32% 18%;
     transition: grid-template-columns 2s ease, background-image 1s ease;
@@ -128,6 +131,7 @@
 
 .firstBox {
     margin-top: calc(var(--vh) * 80);
+    margin-top: 80lvh;
 }
 
 .boxList {
@@ -143,6 +147,7 @@
 
 .secondBox {
     margin-top: calc(var(--vh) * 240);
+    margin-top: 240lvh;
 }
 
 .thirdBoxWrapper {
@@ -152,6 +157,7 @@
 
 .thirdBox {
     margin-top: calc(var(--vh) * 380);
+    margin-top: 380lvh;
 }
 
 @media (max-width: 1023px) {
@@ -195,21 +201,26 @@
     .firstBox {
         width: 90vw;
         margin-top: calc(var(--vh) * 80);
+        margin-top: 80lvh;
     }
 
     .secondBox {
         width: 85vw;
         margin-top: calc(var(--vh) * 200);
+        margin-top: 200lvh;
     }
 
     .thirdBox {
         width: 85vw;
         margin-top: calc(var(--vh) * 360);
+        margin-top: 360lvh;
     }
 
     .gridMainAb {
         height: calc(var(--vh) * 460);
+        height: 460lvh;
         grid-template-rows: calc(var(--vh) * 460);
+        grid-template-rows: 460lvh;
     }
 
     .icon {

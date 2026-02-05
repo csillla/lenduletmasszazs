@@ -19,6 +19,7 @@
     width: 100%;
     background-color: transparent;
     padding: calc(var(--vh) * 10) 0vw;
+    padding: 10lvh 0vw;
     box-sizing: border-box;
 }
 
@@ -28,6 +29,7 @@
     margin-top: calc(2.5vw + 48px);
     border-top: 2px solid #a96c6c;
     margin-bottom: calc(var(--vh) * 8);
+    margin-bottom: 8lvh;
 }
 
 
@@ -48,6 +50,7 @@ iframe {
 .map {
     width: 100%;
     height: calc(var(--vh) * 50);
+    height: 50lvh;
 }
 
 .instructions {

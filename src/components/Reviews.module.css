@@ -1,5 +1,6 @@
 .reviews {
     min-height: calc(var(--vh) * 100);
+    min-height: 100lvh;
     width: 100%;
     background-color: #3c2521; 
     position: relative;
@@ -54,6 +55,7 @@
     display: grid;
     grid-template-columns: 100%;
     padding: calc(var(--vh) * 10) 8vw;
+    padding: 10lvh 8vw;
     box-sizing: border-box;
     text-align: center;
 }
@@ -69,6 +71,7 @@
 .text {
     font-weight: 700;
     margin-top: calc(var(--vh) * 12);
+    margin-top: 12lvh;
     font-size: 28px;
 }
 
@@ -77,6 +80,7 @@
     display: block;
     font-weight: 600;
     margin-top: calc(var(--vh) * 8);
+    margin-top: 8lvh;
 }
 
 
@@ -187,5 +191,6 @@
 
     .reviewsGrid {
         padding: calc(var(--vh) * 10) 8px;
+        padding: 10lvh 8px;
     }
 }
