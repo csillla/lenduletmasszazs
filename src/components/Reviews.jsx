@@ -3,6 +3,10 @@ import reviews from "../data/reviews.json";
 import { useState, useRef, useEffect } from "react";
 import Btn from "./Btn";
 import SplitTypesText from "./SplitTypesText";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Reviews({ id }) {
     const sectionRef = useRef(null);
