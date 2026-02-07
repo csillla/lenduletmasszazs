@@ -20,24 +20,12 @@ export default function About({id}) {
             const offset1 = window.innerHeight * 1.2;
             const offset2 = window.innerHeight * 2.8;
     
-          // FIRST TRIGGER
-          // ScrollTrigger.create({
-          //   trigger: gridRef.current,
-          //   start: `top top-=${offset1}`, 
-          //   scrub: true,
-          //   onEnter: () => {
-          //     firstPhaseRef.current.classList.add(styles.transparent);
-          //     gridRef.current.classList.add(styles.phase1Active);
-          //   },
-          //   onLeaveBack: () => {
-          //     firstPhaseRef.current.classList.remove(styles.transparent);
-          //     gridRef.current.classList.remove(styles.phase1Active);
-          //   }
-          // });
+         
 
           ScrollTrigger.create({
             trigger: gridRef.current,
             start: `top top-=${offset1}`,
+            end: "bottom top",
             scrub: true,
             toggleClass: {
               targets: firstPhaseRef.current,
@@ -45,9 +33,11 @@ export default function About({id}) {
             }
           });
           
+        
           ScrollTrigger.create({
             trigger: gridRef.current,
             start: `top top-=${offset1}`,
+            end: "bottom top",
             scrub: true,
             toggleClass: {
               targets: gridRef.current,
@@ -55,24 +45,12 @@ export default function About({id}) {
             }
           });
     
-          // SECOND TRIGGER
-          // ScrollTrigger.create({
-          //   trigger: gridRef.current,
-          //   start: `top top-=${offset2}`,
-          //   scrub: true,
-          //   onEnter: () => {
-          //     secondPhaseRef.current.classList.add(styles.transparent);
-          //     gridRef.current.classList.add(styles.phase2Active);
-          //   },
-          //   onLeaveBack: () => {
-          //     secondPhaseRef.current.classList.remove(styles.transparent);
-          //     gridRef.current.classList.remove(styles.phase2Active);
-          //   }
-          // });
+          
 
           ScrollTrigger.create({
             trigger: gridRef.current,
             start: `top top-=${offset2}`,
+            end: "bottom top",
             scrub: true,
             toggleClass: {
               targets: secondPhaseRef.current,
@@ -83,10 +61,26 @@ export default function About({id}) {
           ScrollTrigger.create({
             trigger: gridRef.current,
             start: `top top-=${offset2}`,
+            end: "bottom top",
             scrub: true,
             toggleClass: {
               targets: gridRef.current,
               className: styles.phase2Active
+            }
+          });
+
+          ScrollTrigger.create({
+            trigger: gridRef.current,
+            start: `top top-=${offset2}`,
+            onLeave: () => {
+              gridRef.current.classList.add(styles.phase2Active);
+              firstPhaseRef.current.classList.add(styles.transparent);
+              secondPhaseRef.current.classList.add(styles.transparent);
+            },
+            onEnterBack: () => {
+              gridRef.current.classList.remove(styles.phase2Active);
+              firstPhaseRef.current.classList.remove(styles.transparent);
+              secondPhaseRef.current.classList.remove(styles.transparent);
             }
           });
     

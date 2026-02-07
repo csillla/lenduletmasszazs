@@ -13,17 +13,11 @@ function Reviews({ id }) {
     const [index, setIndex] = useState(0);
     const total = reviews.length;
 
-    // useEffect(() => {
-    //     if (!sectionRef.current) return;
-      
-    //     const top =
-    //       sectionRef.current.getBoundingClientRect().top + window.pageYOffset;
-      
-    //     window.scrollTo({
-    //       top,
-    //       behavior: "smooth",
-    //     });
-    // }, [index]);
+    const refreshScroll = () => {
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+        });
+    };
 
     const scrollToTop = () => {
         history.replaceState(null, "", window.location.pathname);
@@ -33,32 +27,21 @@ function Reviews({ id }) {
         });
     };
 
-    // const scrollToTop = () => {
-    //     if (!sectionRef.current) return;
-      
-    //     sectionRef.current.scrollIntoView({
-    //       behavior: "smooth",
-    //       block: "start"
-    //     });
-    // };
-
     const next = () => {
         setIndex(prev => (prev + visibleCount) % total);
         scrollToTop();
+        refreshScroll();
     };
       
     const prev = () => {
         setIndex(prev => (prev - visibleCount + total) % total);
         scrollToTop();
+        refreshScroll();
     };
 
     const visibleReviews = Array.from({ length: visibleCount }, (_, i) =>
         reviews[(index + i) % total]
     );
-
-    
-
-    
 
     return (
         <section ref={sectionRef} id={id} className={`gridMain reviewsSection ${styles.reviews}`}>

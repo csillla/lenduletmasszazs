@@ -21,6 +21,13 @@ function Prices({ id }) {
   const overlayRef = useRef(null);
 
   useLayoutEffect(() => {
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    });
+
     const ctx = gsap.context(() => {
       const section = sectionRef.current;
       const pin = pinRef.current;
@@ -106,6 +113,7 @@ function Prices({ id }) {
           pin: pin,
           pinSpacing: false,
           anticipatePin: 1,
+          // fastScrollEnd: true,
           invalidateOnRefresh: true,
           // TitleHalf expansion
           onUpdate: (self) => {
