@@ -44,8 +44,8 @@ function Contact({id}) {
                             <div>Írj egy rövid üzenetet, hogy szeretnél jönni:</div>
                             <div>
                                         <div><strong>TEL*:</strong> +36302482376</div>
-                                        <div><strong>FACEBOOK:</strong> lendulet_masszazs</div>
-                                        <div><strong>EMAIL:</strong> </div>
+                                        {/* <div><strong>FACEBOOK:</strong> lendulet_masszazs</div> */}
+                                        <div><strong>EMAIL:</strong> bendienator@gmail.com</div>
                             </div>
                             <div className={styles.note}>* Ha telefonon keresnél, akkor kérlek sms-t írj, mert munka közben nem tudom felvenni.</div>
                         </div>
